@@ -2,6 +2,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:travelmate/user/loginScreen.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
@@ -71,20 +72,24 @@ class GetStarted extends StatelessWidget {
                         ),
                       ),
                       // Text on top of blurred container
-                      Container(
-                        height: 50,
-                        width: 200,
-                        decoration: BoxDecoration(
-                          color: Color(0xff0C1229).withOpacity(0.5), // Adjust opacity as needed
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "GET STARTED",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                      GestureDetector(onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
+                      },
+                        child: Container(
+                          height: 50,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            color: Color(0xff0C1229).withOpacity(0.5), // Adjust opacity as needed
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "GET STARTED",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
                             ),
                           ),
                         ),

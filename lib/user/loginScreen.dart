@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travelmate/constants/constant_colors.dart';
+import 'package:travelmate/user/signupScreen.dart';
+
+import 'homeScreen.dart';
 
 class LoginPage extends StatelessWidget {
 
@@ -71,21 +74,26 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         // Text on top of blurred container
-                        Container(
-                          height: height/12,
-                          width: width,
-                          decoration: BoxDecoration(
-                            color: Color(0xff60320D).withOpacity(0.5), // Adjust opacity as needed
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "LOGIN",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-              
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => UserHomePage(),));
+                          },
+                          child: Container(
+                            height: height/12,
+                            width: width,
+                            decoration: BoxDecoration(
+                              color: Color(0xff60320D).withOpacity(0.5), // Adjust opacity as neede;
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "LOGIN",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+
+                                ),
                               ),
                             ),
                           ),
@@ -97,7 +105,10 @@ class LoginPage extends StatelessWidget {
                   Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Don't have an account ?",style: TextStyle(color: Colors.white,fontFamily: "archivo",fontSize: 10),),
-                      Text(" Sign up",style: TextStyle(color: Color(0xff7CD3CE),fontFamily: "archivo",fontSize: 12),),
+                      GestureDetector(onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen(),));
+                      },
+                          child: Text(" Sign up",style: TextStyle(color: Color(0xff7CD3CE),fontFamily: "archivo",fontSize: 12),)),
                     ],
                   )
                 ],

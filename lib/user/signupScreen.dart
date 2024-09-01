@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:travelmate/constants/constant_colors.dart';
 
+import 'homeScreen.dart';
+
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 
@@ -24,7 +26,7 @@ class SignupScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: height/5,),
+                  SizedBox(height: height/8,),
                   Text("Let's get",style: TextStyle(color: Colors.white,fontFamily: "benne",fontSize: 40),),
                   Text("started",style: TextStyle(color: Colors.white,fontFamily: "benne",fontSize: 40),),
                   SizedBox(height: height/17,),
@@ -114,26 +116,31 @@ class SignupScreen extends StatelessWidget {
                       //  Text on top of blurred container
               
               
-                        Container(
-                          height: height/12,
-                          width: width,
-                          decoration: BoxDecoration(
-                            color: Color(0xff60320D).withOpacity(0.5), // Adjust opacity as needed
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                //fontFamily: "belleza",
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-              
-                              ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => UserHomePage(),));
+                          },
+                          child: Container(
+                            height: height/12,
+                            width: width,
+                            decoration: BoxDecoration(
+                              color: Color(0xff60320D).withOpacity(0.5), // Adjust opacity as needed
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                          // ),
-                        ),
+                            child: Center(
+                              child: Text(
+                                "Sign Up",
+                                style: TextStyle(
+                                  //fontFamily: "belleza",
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+
+                                ),
+                              ),
+                            // ),
+                          ),
+                          ),
                         ) ],
                     ),
                   ),

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:travelmate/user/destinationScreen.dart';
 import 'package:travelmate/user/getStartedScreen.dart';
 import 'package:travelmate/user/homeScreen.dart';
 import 'package:travelmate/user/loginScreen.dart';
+import 'package:travelmate/user/myTicketScreen.dart';
 import 'package:travelmate/user/review.dart';
 import 'package:travelmate/user/signupScreen.dart';
 import 'package:travelmate/user/splashScreen.dart';
+import 'package:travelmate/user/wishListScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,9 +26,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: SplashScreen(),
-      // home: HomePage(),
-      home:reviewWidget(),
+      home: SplashScreen(),
+      // home: DestinationScreen(),
+      // home:WishlistWidget(),
     );
   }
 }
